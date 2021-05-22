@@ -1,0 +1,30 @@
+.guestUserModal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.712);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guestUserModal button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: black;
+    z-index: 10;
+}
+
+.guestUserModal form{
+    
+    position: fixed;
+    background-color:rgb(251, 255, 0);
+    padding: 0.5rem;
+    height: 200px;
+    width: 250px;
+   
+
+}

@@ -1,0 +1,14 @@
+@import "https://ease-css.netlify.app/ease/css/ease.css";
+@import "./css/home.css";
+@import "./css/guestUser.css";
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fef9ff;
+}
+
