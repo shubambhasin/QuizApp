@@ -3,6 +3,10 @@
 @import "./css/guestUser.css";
 @import './css/questionCard.css';
 
+
+body {
+  color: black;
+}
 * {
   margin: 0;
   padding: 0;

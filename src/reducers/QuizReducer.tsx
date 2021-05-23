@@ -10,7 +10,7 @@ export const initialQuizState = {
     clickedWrong: "",
     incrementScore: 0,
     decrementScore: 0,
-    startQuiz:true
+    startQuiz: true
 }
 
 export const INITIALIZE_QUIZ_NAME = "INITIALIZE_QUIZ_NAME"
@@ -46,41 +46,36 @@ export const QuizReducer = (state: any, action: ACTIONTYPE) => {
         case INITIALIZE_QUIZ_DATA:
             return {
                 ...state,
-                quizName: action.payload[0].quizName,
-                level: action.payload[0].level,
-                quiz: action.payload[0].questions,
-                options: action.payload[0].questions[state.questionNumber].options
+                quizName: action.payload.quizName,
+                level: action.payload.level,
+                quiz: action.payload.questions,
+                options: action.payload.questions[state.questionNumber].options
             }
-
         case SET_OPTIONS:
             return {
                 ...state,
                 options: state.quiz[state.questionNumber].options.map((option: any) => {
 
-                    return option
+                    return option;
 
                 })
             }
-
         case NEXT_QUESTION:
             return {
                 ...state,
                 questionNumber: state.questionNumber + 1
 
             }
-        case STOP_QUIZ: 
-        return {
-            ...state,
-            startQuiz: false
-        }
-
+        case STOP_QUIZ:
+            return {
+                ...state,
+                startQuiz: false
+            }
         case INCREMENT_SCORE:
             return {
-            ...state,
-            score: state.score + action.payload
-        }
-
-
+                ...state,
+                score: state.score + action.payload
+            }
         default:
 
             { return state }

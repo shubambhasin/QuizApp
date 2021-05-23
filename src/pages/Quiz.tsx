@@ -1,47 +1,56 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useQuiz } from '../context/QuizContext'
 import axios from 'axios'
-import { INITIALIZE_QUIZ_DATA } from '../reducers/QuizReducer'
+import { INITIALIZE_QUIZ_DATA, NEXT_QUESTION, SET_OPTIONS, STOP_QUIZ } from '../reducers/QuizReducer'
 import { useParams } from 'react-router'
 import ScoreCard from '../components/scorecard/ScoreCard'
 import QuestionCard from '../components/questionCard/QuestionCard'
+import { useLoader } from '../context/LoaderContext'
+import Loader from '../components/loader/Loader'
 const Quiz = () => {
 
     const { state, dispatch }: any = useQuiz()
-    const query = useParams()
+    const [loader, setLoader] = useState<any>(false)
+    const quizName = useParams()
+
+    console.log(quizName.quizName)
 
     useEffect(() => {
-
-
         (async (req, res) => {
-
-            const response = await axios.get(`https://quizappbackend.shubambhasin.repl.co/quiz/${query.quizName}`)
-
-            console.log(response)
-
+            setLoader(true)
+            console.log(loader)
+            const response = await axios.get(`https://quizappbackend.shubambhasin.repl.co/quiz/${quizName.quizName}`)
+            console.log(response.data.quiz)
+            setLoader(false)
             dispatch({ type: INITIALIZE_QUIZ_DATA, payload: response.data.quiz }
             )
-
             console.log(state.quiz)
-
         })()
-
     }, [])
 
+    const passQuestion = () => {
+        if (state.questionNumber < state.quiz.length - 1) {
+            console.log(state.quiz[state.questionNumber])
+            dispatch({ type: NEXT_QUESTION })
+            dispatch({ type: SET_OPTIONS })
+        }
+        else {
+            dispatch({ type: STOP_QUIZ })
+        }
+    }
     return (
         <div className="quiz-page">
+            {loader && <Loader />}
+            {!loader && <>
+                <h1 className="h1 center">Quiz Name: {state.quizName}</h1>
+                <p className="center">Level: {state.level}</p>
+                {state.startQuiz && <QuestionCard />}
+                <div className="flex jcc aic">
 
-            <h1 className="h1 center">Quiz Name: {state.quizName}</h1>
-            <p className="center">Level: {state.level}</p>
-            {/* <p>{state.quiz.length}</p> */}
-
-            {!state.startQuiz && <ScoreCard />}
-            {state.startQuiz && <QuestionCard />}
-
-
-
-
-
+                    {!state.startQuiz && <ScoreCard />}
+                    {state.questionNumber < state.quiz.length - 1 && <button className="btn btn-md btn-blue" onClick={passQuestion}>Pass</button>}
+                </div>
+            </>}
 
         </div>
     )

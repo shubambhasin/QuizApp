@@ -9,28 +9,15 @@ const Home = () => {
   const { state } = useQuiz();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   (async (req, res) => {
-  //     const response = await axios.get(
-  //       "https://quizappbackend.shubambhasin.repl.co/quiz/founders-quiz"
-  //     );
-  //     console.log(response.data.quiz);
-  //   })();
-
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
   return (
     <div className="home">
-      {/* <header>Home</header>
-      <div to="/">LandingPage</div>
-      {guestUser.username} */}
 
       <div className="main">
         <div className="user-info">
           UserInfo: {guestUser.username !== "" && guestUser.username} score:{" "}
           {guestUser.username !== "" && state.score}
         </div>
-        <h1 className="h2">Popular Quizzes</h1>
+        <h1 className="h2 mtb1-rem">Popular Quizzes</h1>
         <div className="quiz-3">
           <div className="flex f-wrap jcc aic gap-3">
             <NavLink to="/quiz/founders-quiz">

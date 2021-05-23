@@ -24,7 +24,7 @@ const LandingPage = () => {
   <ul className="no-list-pad">
     <li className="list-items">Each questions if asnwered right gives 10 points</li>
     <li className="list-items">5 negative points if answer is wrong</li>
-    <li className="list-items">Each question will have a 25sec of time to answer, after that it will be marked as unanswered.</li>
+    {/* //TODO: <li className="list-items">Each question will have a 25sec of time to answer, after that it will be marked as unanswered.</li> */}
   </ul>
 
 </div>
