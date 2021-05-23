@@ -12,6 +12,7 @@ const LandingPage = () => {
     <div>
       {modal && <GuestUserForm />}
       <div className="center-block">
+        <div className="bg">
         <header className="flex flex-col jcc aic">
           <h1 className="h1">Hey I am Quizzy</h1>
           <small>I will be testing your knowledge</small>
@@ -27,12 +28,13 @@ const LandingPage = () => {
             {/* //TODO: <li className="list-items">Each question will have a 25sec of time to answer, after that it will be marked as unanswered.</li> */}
           </ul>
         </div>
-          <div className="flex jcc aic">
-            <button className="btn btn-red m1-rem" onClick={setGuestModal}>
-              Enter as guest
-            </button>
-            <button className="btn btn-green m1-rem"> Login</button>
-          </div>
+        <div className="flex jcc aic">
+          <button className="btn btn-red m1-rem" onClick={setGuestModal}>
+            Enter as guest
+          </button>
+          <button className="btn btn-green m1-rem"> Login</button>
+        </div>
+        </div>
       </div>
     </div>
   );

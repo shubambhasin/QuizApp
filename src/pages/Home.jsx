@@ -46,12 +46,12 @@ const Home = () => {
               </div>
             </NavLink>
 
-            <NavLink to="/quiz/gadgets-quiz">
+            {/* TODO: <NavLink to="/quiz/gadgets-quiz"> */}
               <div className="quiz3 rounded-div">
                 <h1 className="h3 center">Gadgets Quiz</h1>
                 <img src={gadgets} alt="gadget-img" className="rounded-div" />
               </div>
-            </NavLink>
+            {/* </NavLink> */}
           </div>
         </div>
       </div>

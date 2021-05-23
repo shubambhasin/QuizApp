@@ -63,9 +63,11 @@ const Quiz = () => {
                 {state.startQuiz && <QuestionCard />}
                 <div className="flex jcc aic">
 
-                    {!state.startQuiz && <ScoreCard />}
-                    {state.questionNumber < state.quiz.length - 1 && <button className="btn btn-md btn-blue" onClick={passQuestion}>Pass</button>}
+                    {!state.startQuiz && <ScoreCard /> }
+
+                    {state.questionNumber < state.quiz.length  && state.startQuiz && <button className="btn btn-md btn-blue" onClick={passQuestion}>Pass</button>}
                 </div>
+                    {!state.startQuiz && <small className="smaller">Note: Refresh to play again</small> }
             </>}
 
         </div>

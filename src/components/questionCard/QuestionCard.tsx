@@ -13,7 +13,7 @@ const QuestionCard = () => {
 
 
         if (questionNumber < state.quiz.length - 1) {
-            console.log(state.quiz[state.questionNumber])
+
             if (option.isRight === true) {
 
                 dispatch({ type: INCREMENT_SCORE, payload: 10 })
@@ -38,7 +38,7 @@ const QuestionCard = () => {
         <div className="question-card">
 
             <p className="bold"></p>
-            {/* <p>{state.quiz.length}</p> */}
+
             <p>Q{state.questionNumber + 1}. {state.quiz[questionNumber]?.question}</p>
             <ol className="options no-list-pad">
 

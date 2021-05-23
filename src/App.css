@@ -22,5 +22,27 @@ body {
 
 } 
 
+.center-block{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  height: 100vh;
+
+}
 
 
+.bg {
+
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: rgb(255, 215, 170);
+  padding: 1rem;
+}
+
+@media screen and (max-width: 420px)
+{
+  .bg {
+    width: 85%;
+  }
+}
