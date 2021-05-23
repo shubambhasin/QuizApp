@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.guestUserModal button {
+.guestUserModal .close-btn {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
@@ -19,12 +19,11 @@
 }
 
 .guestUserModal form{
-    
-    position: fixed;
+    position: relative;
     background-color:rgb(251, 255, 0);
     padding: 0.5rem;
     height: 200px;
     width: 250px;
-   
-
+    border-radius: 5px;
 }
+

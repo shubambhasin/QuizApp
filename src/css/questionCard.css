@@ -1,0 +1,45 @@
+.center{
+    text-align: center;
+}
+.quiz-page{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+.question-card
+{
+    padding: 0.5rem;
+    width: 350px;
+}
+
+.option-answer {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+}
+
+.question-card {
+
+    background: rgb(255, 177, 124);
+    border-radius: 10px;
+    margin: 0 auto;
+
+}
+
+@media screen and (max-width: 420px){
+
+    .quiz-page{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .quiz-page{
+        width: 70%;
+    }
+}

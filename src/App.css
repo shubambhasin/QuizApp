@@ -1,7 +1,7 @@
 @import "https://ease-css.netlify.app/ease/css/ease.css";
 @import "./css/home.css";
 @import "./css/guestUser.css";
-
+@import './css/questionCard.css';
 
 * {
   margin: 0;
