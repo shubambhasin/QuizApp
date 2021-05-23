@@ -25,6 +25,7 @@ export const SET_LEVEL = "SET_LEVEL"
 export const STOP_QUIZ = "STOP_QUIZ"
 export const SET_OPTIONS = "SET_OPTIONS"
 export const NEXT_QUESTION = "NEXT_QUESTION"
+export const RESET_SCORE = "RESET_SCORE"
 
 
 export type ACTIONTYPE =
@@ -40,6 +41,7 @@ export type ACTIONTYPE =
     | { type: "STOP_QUIZ"; payload: boolean }
     | { type: "SET_OPTIONS"; payload: any }
     | { type: "NEXT_QUESTION"; payload: any }
+    | { type: "RESET_SCORE"; payload: any}
 
 export const QuizReducer = (state: any, action: ACTIONTYPE) => {
     switch (action.type) {
@@ -70,12 +72,22 @@ export const QuizReducer = (state: any, action: ACTIONTYPE) => {
             return {
                 ...state,
                 startQuiz: false
+                // questionNumber: 0
             }
         case INCREMENT_SCORE:
             return {
                 ...state,
                 score: state.score + action.payload
             }
+        case RESET_SCORE: 
+        return {
+            ...state,
+            score: 0
+        }
+
+
+
+
         default:
 
             { return state }

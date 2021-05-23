@@ -29,26 +29,16 @@
     background-color:#fef9ff;
 }
 
-.quiz-3 .quiz1 {
+.quiz-3 .quiz1, .quiz-3 .quiz2, .quiz-3 .quiz3  {
 
 
     width: 200px;
     height: 250px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 
 
 }
-
-.quiz-3 .quiz2 {
-    width: 200px;
-    height: 250px;
-    background-color: white;
-
-}
-
-.quiz-3 .quiz3 {
-    width: 200px;
-    height: 250px;
-    background-color: white;
-
+.rounded-div
+{
+    border-radius: 10px;
 }

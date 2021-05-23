@@ -1,21 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { useQuiz } from '../context/QuizContext'
 import axios from 'axios'
-import { INITIALIZE_QUIZ_DATA, NEXT_QUESTION, SET_OPTIONS, STOP_QUIZ } from '../reducers/QuizReducer'
-import { useParams } from 'react-router'
+import { INITIALIZE_QUIZ_DATA, NEXT_QUESTION, RESET_SCORE, SET_OPTIONS, STOP_QUIZ } from '../reducers/QuizReducer'
+import { useNavigate, useParams } from 'react-router'
 import ScoreCard from '../components/scorecard/ScoreCard'
 import QuestionCard from '../components/questionCard/QuestionCard'
 import { useLoader } from '../context/LoaderContext'
 import Loader from '../components/loader/Loader'
+import { useUser } from '../context/UserContext'
 const Quiz = () => {
 
+    const { guestUser, user } = useUser()
     const { state, dispatch }: any = useQuiz()
     const [loader, setLoader] = useState<any>(false)
     const quizName = useParams()
+    const navigate = useNavigate()
 
     console.log(quizName.quizName)
 
     useEffect(() => {
+
+        dispatch({ type: RESET_SCORE })
+
+        if (user.username === "") {
+            if (guestUser.username === "") {
+                navigate("/")
+            }
+        }
+
         (async (req, res) => {
             setLoader(true)
             console.log(loader)
@@ -26,6 +38,10 @@ const Quiz = () => {
             )
             console.log(state.quiz)
         })()
+
+
+
+
     }, [])
 
     const passQuestion = () => {

@@ -1,14 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './App.css';
 import MyRoutes from './components/MyRoutes';
 
 function App() {
 
-  
+
   return (
     <div className="App">
-      <MyRoutes/>   
+      <MyRoutes />
     </div>
   );
 }

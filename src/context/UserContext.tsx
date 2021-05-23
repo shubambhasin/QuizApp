@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 
-export const UserContext = React.createContext<any>(null);
+const UserContext = React.createContext<any>(null);
 
 type GuestUser = {
     username: string,
