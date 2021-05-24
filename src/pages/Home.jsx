@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { div, NavLink, useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
-import axios from "axios";
 import { useQuiz } from "../context/QuizContext";
 import founder from "../assests/founder.svg";
 import startup from "../assests/startup.svg";
@@ -46,12 +45,12 @@ const Home = () => {
               </div>
             </NavLink>
 
-            {/* TODO: <NavLink to="/quiz/gadgets-quiz"> */}
+            <NavLink to="/quiz/tech-quiz">
               <div className="quiz3 rounded-div">
                 <h1 className="h3 center">Gadgets Quiz</h1>
                 <img src={gadgets} alt="gadget-img" className="rounded-div" />
               </div>
-            {/* </NavLink> */}
+            </NavLink>
           </div>
         </div>
       </div>
