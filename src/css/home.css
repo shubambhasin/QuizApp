@@ -19,6 +19,7 @@
 .main .user-info {
 
     width: 100%;
+    position: relative;
     height: 60px;
     background-color: #736ced;
     border-bottom-left-radius: 10px;

@@ -27,8 +27,10 @@ export const UserContextProvider = ({ children }: any) => {
 
     })
 
+    const [greet, setGreet] = useState("Welcome");
+
     return (
-        <UserContext.Provider value={{ guestUser, setGuestUser, user, setUser }}>{children}</UserContext.Provider>
+        <UserContext.Provider value={{ guestUser, setGuestUser, user, setUser, greet, setGreet }}>{children}</UserContext.Provider>
 
     )
 

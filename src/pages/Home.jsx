@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { div, NavLink, useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
 import { useQuiz } from "../context/QuizContext";
@@ -7,12 +7,18 @@ import startup from "../assests/startup.svg";
 import gadgets from "../assests/gadgets.svg";
 
 const Home = () => {
-  const { guestUser, user } = useUser();
-
+  const { guestUser, user, greet, setGreet } = useUser();
+ 
   const { state } = useQuiz();
   const navigate = useNavigate();
 
   useEffect(() => {
+
+    if(guestUser)
+    {
+      setGreet("Welcome back")
+    }
+
     if (user.username === "") {
       if (guestUser.username === "") {
         navigate("/");
@@ -20,14 +26,22 @@ const Home = () => {
     }
   }, []);
 
+  const logout = () => {
+    localStorage.removeItem("userQuizUser")
+    navigate('/')
+  }
+
+
+
   return (
     <div className="home">
       <div className="main">
-        <div className="user-info center">
+        <div className="user-info flex  jcc aic center">
           <p className="h4">
-            Username: <span className="h4 bold">{guestUser.username !== "" && guestUser.username.toUpperCase()}</span>,  Score:{" "}
+            {greet + ", "}<span className="h4 bold">{guestUser.username !== "" && guestUser.username.toUpperCase()}</span>,  Score:{" "}
             {guestUser.username !== "" && state.score}
-          </p>
+          </p> <span> </span>
+      {  guestUser &&  <button className="btn btn-red logout"  onClick={logout}> Logout </button>}
         </div>
         <h1 className="h2 mtb1-rem">Popular Quizzes</h1>
         <div className="quiz-3">
