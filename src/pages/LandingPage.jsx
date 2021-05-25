@@ -29,10 +29,10 @@ const LandingPage = () => {
           </ul>
         </div>
         <div className="flex jcc aic">
-          <button className="btn btn-red m1-rem" onClick={setGuestModal}>
-            Enter as guest
+          <button className="btn btn-purple" onClick={setGuestModal}>
+            Guest
           </button>
-          <button className="btn btn-green m1-rem"> Login</button>
+          <button className="btn btn-purple-outline m1-rem"> Login</button>
         </div>
         </div>
       </div>

@@ -24,8 +24,8 @@ const Home = () => {
     <div className="home">
       <div className="main">
         <div className="user-info center">
-          <p className="h3">
-            Username: <span className="bold">{guestUser.username !== "" && guestUser.username.toUpperCase()}</span>,  Score:{" "}
+          <p className="h4">
+            Username: <span className="h4 bold">{guestUser.username !== "" && guestUser.username.toUpperCase()}</span>,  Score:{" "}
             {guestUser.username !== "" && state.score}
           </p>
         </div>

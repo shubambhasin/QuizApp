@@ -65,7 +65,7 @@ const Quiz = () => {
 
                     {!state.startQuiz && <ScoreCard /> }
 
-                    {state.questionNumber < state.quiz.length  && state.startQuiz && <button className="btn btn-md btn-blue" onClick={passQuestion}>Pass</button>}
+                    {state.questionNumber < state.quiz.length  && state.startQuiz && <button className="btn btn-pass mtb1-rem" onClick={passQuestion}>Pass</button>}
                 </div>
                     {!state.startQuiz && <small className="smaller">Note: Refresh to play again</small> }
             </>}
