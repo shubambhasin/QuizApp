@@ -3,9 +3,9 @@ import React, { useContext, useState } from "react";
 const LoaderContext = React.createContext<any>(null);
 
 export const LoaderContextProvider = ({ children }: any) => {
-    const [Loader, setLoader] = useState<boolean>(false)
+    const [loader, setLoader] = useState<boolean>(false)
     return (
-        <LoaderContext.Provider value={{ Loader, setLoader }}>
+        <LoaderContext.Provider value={{ loader, setLoader }}>
             {children}
         </LoaderContext.Provider>
     )

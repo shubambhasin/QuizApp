@@ -7,41 +7,51 @@ import startup from "../assests/startup.svg";
 import gadgets from "../assests/gadgets.svg";
 
 const Home = () => {
-  const { guestUser, user, greet, setGreet } = useUser();
- 
+  const { guestUser, user, greet, setGreet, login, setToken, setLogin } = useUser();
+
   const { state } = useQuiz();
   const navigate = useNavigate();
 
   useEffect(() => {
+    // if (guestUser) {
+    //   setGreet("Welcome back");
+    // }
 
-    if(guestUser)
-    {
-      setGreet("Welcome back")
-    }
-
-    if (user.username === "") {
-      if (guestUser.username === "") {
-        navigate("/");
-      }
-    }
+    // if (user.username === "") {
+    //   if (guestUser.username === "") {
+    //     navigate("/");
+    //   }
+    // }
   }, []);
 
   const logout = () => {
-    localStorage.removeItem("userQuizUser")
-    navigate('/')
-  }
-
-
+    localStorage.removeItem("user");
+    setLogin(false)
+    setToken(null)
+    navigate("/");
+  };
 
   return (
     <div className="home">
       <div className="main">
         <div className="user-info flex  jcc aic center">
-          <p className="h4">
-            {greet + ", "}<span className="h4 bold">{guestUser.username !== "" && guestUser.username.toUpperCase()}</span>,  Score:{" "}
-            {guestUser.username !== "" && state.score}
-          </p> <span> </span>
-      {  guestUser &&  <button className="btn btn-red logout"  onClick={logout}> Logout </button>}
+          <p className="h4 user-info-div">
+            <>
+              <span className="h4 bold">
+             <span className="lighter"> {greet + ", "}</span>
+                {guestUser.username !== "" && (guestUser?.username.toUpperCase() || user?.username.toUpperCase())}
+              </span>
+              
+            </>{" "}
+            Score: {guestUser.username !== "" && state.score}
+          </p>{" "}
+          <span> </span>
+          {login && (
+            <button className="btn btn-red logout" onClick={logout}>
+              {" "}
+              Logout{" "}
+            </button>
+          )}
         </div>
         <h1 className="h2 mtb1-rem">Popular Quizzes</h1>
         <div className="quiz-3">

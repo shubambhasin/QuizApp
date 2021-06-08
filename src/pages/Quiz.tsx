@@ -6,15 +6,17 @@ import { useNavigate, useParams } from 'react-router'
 import ScoreCard from '../components/scorecard/ScoreCard'
 import QuestionCard from '../components/questionCard/QuestionCard'
 import { useLoader } from '../context/LoaderContext'
-import Loader from '../components/loader/Loader'
+import Myloader from '../components/loader/Loader'
 import { useUser } from '../context/UserContext'
 const Quiz = () => {
 
-    const { guestUser, user } = useUser()
+    const { guestUser, user, token } = useUser()
     const { state, dispatch }: any = useQuiz()
     const [loader, setLoader] = useState<any>(false)
     const quizName = useParams()
     const navigate = useNavigate()
+
+    console.log("token", token)
 
     console.log(quizName.quizName)
 
@@ -31,7 +33,11 @@ const Quiz = () => {
         (async (req, res) => {
             setLoader(true)
             console.log(loader)
-            const response = await axios.get(`https://quizappbackend.shubambhasin.repl.co/quiz/${quizName.quizName}`)
+            const response = await axios.get(`https://quizappbackend.shubambhasin.repl.co/quiz/${quizName.quizName}`, {
+                headers: {
+                    authorization: token
+                }
+            })
             console.log(response.data.quiz)
             setLoader(false)
             dispatch({ type: INITIALIZE_QUIZ_DATA, payload: response.data.quiz }
@@ -56,7 +62,7 @@ const Quiz = () => {
     }
     return (
         <div className="quiz-page">
-            {loader && <Loader />}
+            {loader && <Myloader text="Loading..." />}
             {!loader && <>
                 <h1 className="h1 center">Quiz Name: {state.quizName}</h1>
                 <p className="center">Level: {state.level}</p>

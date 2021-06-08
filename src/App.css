@@ -3,6 +3,7 @@
 @import "./css/guestUser.css";
 @import "./css/questionCard.css";
 
+
 body {
   color: black;
 }
@@ -22,6 +23,10 @@ body {
 .quiz2,
 .quiz3 {
   box-shadow: 0px 0px 10px 1px rgb(245, 244, 244);
+}
+
+.f-aqua{
+  color:#03a9f4;
 }
 
 .center-block {
@@ -89,12 +94,17 @@ body {
   position: absolute;
   display: inline-flex;
   justify-content: center;
-  top: 0.5rem;right: 0.2rem
+  top: 0.5rem;
+  right: 0.2rem;
 }
 .footer {
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
+
+}
+
+.user-info-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* ********in button animation***************** */
@@ -164,5 +174,13 @@ body {
 @media screen and (max-width: 420px) {
   .bg {
     width: 85%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .user-info {
+    display: flex;
+    justify-content: flex-start;
+    
   }
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 import './loader.css'
-const Loader = () => {
+const Myloader = ({text}: any) => {
     return (
         <div className="loader">
-        <h1>LOADING</h1>
+        <h1>{text}</h1>
         <span></span>
         <span></span>
         <span></span>
@@ -11,4 +11,4 @@ const Loader = () => {
     )
 }
 
-export default Loader
+export default Myloader
