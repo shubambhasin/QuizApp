@@ -1,0 +1,186 @@
+@import "https://ease-css.netlify.app/ease/css/ease.css";
+@import "./css/home.css";
+@import "./css/guestUser.css";
+@import "./css/questionCard.css";
+
+
+body {
+  color: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fef9ff;
+}
+
+.xsm {
+  font-size: 0.7rem;
+}
+.quiz1,
+.quiz2,
+.quiz3 {
+  box-shadow: 0px 0px 10px 1px rgb(245, 244, 244);
+}
+
+.f-aqua{
+  color:#03a9f4;
+}
+
+.center-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn-pass {
+  background: rgb(180, 100, 255);
+  color: white;
+  box-shadow: 0 0 10px 1px rgb(189, 189, 189);
+}
+
+.bg {
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: rgb(244, 232, 255);
+  padding: 1rem;
+  box-shadow: 5px 5px 50px 2px rgb(243, 243, 243);
+}
+.btn-purple {
+  background: #9044fe;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  box-shadow: 0 0 0 0 rgb(211, 211, 211);
+  transition: background, box-shadow 1s;
+}
+.btn-purple:hover {
+  box-shadow: 3px 3px 20px 3px rgb(211, 211, 211);
+}
+
+.btn-purple-outline {
+  background: white;
+  border: 2px solid transparent;
+  transition: border 1s;
+}
+.btn-purple-outline:hover {
+  border: 2px solid #9044fe;
+  background: #f6f0ff;
+}
+.btn-enter-quiz {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.95rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: rgb(76, 0, 255);
+  color: #f7f7f7;
+  cursor: pointer;
+  transition-property: background, box-shadow;
+}
+.btn-enter-quiz:hover {
+  background: rgb(111, 0, 255);
+}
+
+.logout {
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  top: 0.5rem;
+  right: 0.2rem;
+}
+.footer {
+
+}
+
+.user-info-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ********in button animation***************** */
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.dot:nth-child(1) {
+  transform: translateX(100%);
+  background-color: rgb(76, 0, 255);
+  animation: left 1s ease alternate infinite;
+}
+
+.dot:nth-child(2) {
+  animation: center 1s ease infinite;
+}
+
+.dot:nth-child(3) {
+  transform: translateX(-100%);
+  background-color: rgb(76, 0, 255);
+  animation: right 1s ease alternate infinite;
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  50% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(10%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes center {
+  0%,
+  100% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .bg {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .user-info {
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+}

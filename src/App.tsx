@@ -1,10 +1,15 @@
 import React from 'react';
 import './App.css';
+import Footer from './components/Footer';
+import MyRoutes from './components/MyRoutes';
 
 function App() {
+
+
   return (
     <div className="App">
-     Quiz
+      <MyRoutes />
+      {/* <Footer/> */}
     </div>
   );
 }

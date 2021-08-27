@@ -1,0 +1,45 @@
+.instructions{
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    max-width: 375px;
+    border-radius: 10px;
+    height: max-content;
+    margin-top:2rem;
+
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main .user-info {
+
+    width: 100%;
+    position: relative;
+    height: 60px;
+    background-color: #736ced;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.main .quiz-3 {
+    background-color:#fef9ff;
+}
+
+.quiz-3 .quiz1, .quiz-3 .quiz2, .quiz-3 .quiz3  {
+
+
+    width: 200px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+
+
+}
+.rounded-div
+{
+    border-radius: 10px;
+}

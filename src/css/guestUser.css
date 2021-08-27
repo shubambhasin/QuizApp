@@ -1,0 +1,44 @@
+.guestUserModal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.712);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guestUserModal .close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: black;
+    z-index: 10;
+}
+
+.guestUserModal form{
+    position: relative;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    height: 200px;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0px rgb(90, 90, 90);
+}
+.guestUserModal form input {
+  background: rgb(230, 230, 230);
+}
+.guestUserModal form small{
+  color: rgb(150, 150, 150);
+  margin: 0.2rem 0.5rem;
+}
+
+
+
+
